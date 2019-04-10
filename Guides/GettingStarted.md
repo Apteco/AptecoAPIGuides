@@ -231,16 +231,10 @@ This uses the dataViewName and systemName from before plus the query that was mo
 Finally, to build a sample console application from its component parts we can put it all together:
 
 ``` csharp
-static void Main(string[] args)
+private async Task OutputCount(string dataViewName, string systemName, string userLogin, string password, string queryFilePath)
 {
-  var dataViewName = args[0];
-  var systemName = args[1];
-  var userLogin = args[2];
-  var password = args[3];
-  var queryFilePath = args[4];
-
-  var sessionDetails = Login(dataViewName, userLogin, password);
-  var query = GetQuery(dataViewName, systemName, queryFilePath, sessionDetails);
+  var sessionDetails = await Login(dataViewName, userLogin, password);
+  var query = await GetQuery(dataViewName, systemName, queryFilePath, sessionDetails);
   if (query == null)
   {
     Console.WriteLine("No query returned");
@@ -248,7 +242,7 @@ static void Main(string[] args)
   }
 
   ModifyQuery(query);
-  var count = CountQuery(dataViewName, systemName, query, sessionDetails);
+  var count = await CountQuery(dataViewName, systemName, query, sessionDetails);
   if (count == null)
   {
     Console.WriteLine("No count returned for query");
