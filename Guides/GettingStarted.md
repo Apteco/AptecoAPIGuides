@@ -252,3 +252,5 @@ private async Task OutputCount(string dataViewName, string systemName, string us
   Console.WriteLine($"The query returned {count.CountValue} {count.TableName}");
 }
 ```
+
+For further examples of using the Apteco API, see the [Sample Applications](../Readme.md#sample-applications) section of the overall Readme.
