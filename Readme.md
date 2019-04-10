@@ -1,8 +1,14 @@
 # Apteco API Guides
 This repository provides some Getting Started documentation for the Apteco API and links to some sample applications.
 
-### What is the Apteco API?
-The Apteco API is a RESTful API that provides access to functionality within the [Apteco Marketing Suite™](http://www.apteco.com).
+## Contents
+
+* [What is the Apteco API](#what-is-the-apteco-api)
+  * [Documentation](#documentation)
+  * [Sample Applications](#sample-applications)
+
+## What is the Apteco API?
+The Apteco API is a RESTful API that provides programmatic access to functionality within the [Apteco Marketing Suite™](http://www.apteco.com).
 
 The Apteco Marketing Suite™ provides a unique combination of speed and power for turning Insight into Action.  This is achieved using our
 Marketing Data Analysis and Multi-channel campaign automation tools.
