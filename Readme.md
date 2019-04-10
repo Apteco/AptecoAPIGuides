@@ -26,7 +26,9 @@ to one of our partners.
 ### Documentation
 The currently available documentation is:
  
- * [Getting Started Guide](Guides/GettingStarted.md)
+* [Getting Started Guide](GettingStarted.md): General information on how to start using the Apteco API.
+
+ * [Generating an API Client Library](GeneratingAPIClientLibrary.md): How to automatically generate a client library to connect to the Apteco API.
 
 ### Sample Applications
 
