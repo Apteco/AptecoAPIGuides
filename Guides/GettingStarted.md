@@ -201,15 +201,53 @@ endpoint.  Indeed, if we wanted to count it without modification then we could u
 `{dataViewName}/Queries/{systemName}/CountFileSync` endpoint directly to pass in a file path and get a set of counts.
 
 However a more interesting example would be to modify the query first.  In this example we search for a criteria that uses the
-"peEmail" variable and replaces the values with "*@example.com".
+a given variable and replaces the selected values with some new ones.
 
 ``` csharp
-private void ModifyQuery(Query query)
+private void ModifyQuery(Query query, string variableName, string replacementValue)
 {
+  ModifyClause(query?.Selection?.Rule?.Clause, variableName, replacementValue);
+}
 
+private void ModifyClause(Clause clause, string variableName, string replacementValue)
+{
+  if (clause?.Criteria != null)
+  {
+    ModifyCriteria(clause.Criteria, variableName, replacementValue);
+  }
 
+  if (clause?.Logic?.Operands != null)
+  {
+    foreach (Clause childClause in clause.Logic.Operands)
+      ModifyClause(childClause, variableName, replacementValue);
+  }
+
+  if (clause?.SubSelection?.Selection?.Rule?.Clause != null)
+  {
+    ModifyClause(clause.SubSelection.Selection.Rule.Clause, variableName, replacementValue);
+  }
+}
+
+private void ModifyCriteria(Criteria criteria, string variableName, string replacementValue)
+{
+  if ((criteria?.VariableName == variableName) && 
+      (criteria?.ValueRules?.Count > 0) &&
+      (criteria.ValueRules[0]?.ListRule?.VariableName == variableName))
+  {
+    criteria.ValueRules[0].ListRule.List = replacementValue;
+  }
 }
 ```
+
+The three methods above go through the query tree to find all the criteria nodes:
+
+* The `ModifyQuery()` method finds the root clause in the query and passes it on to `ModifyClause()`.
+* The `ModifyClause()` method handles the three types of clause.  If the clause has a criteria then
+this is passed directly to the `ModifyCriteria()` method.  If the clause has a logic then each child
+clause of the logic is recursed through.  If the logic has a sub-selection (used for applying limits,
+RFVs, etc. to parts of the query) then the inner clause is recursed into.
+* The `ModifyCriteria()` method handles the leaves of the query and applies the replacement value if
+the criteria is for the appropriate variable name.
 
 ### Count a query
 
@@ -241,7 +279,9 @@ private async Task OutputCount(string dataViewName, string systemName, string us
     return;
   }
 
-  ModifyQuery(query);
+  //This looks for all variables with the name peTitle and selects categories with the codes 01 and 02.
+  ModifyQuery(query, "peIncome", "01\t02");
+  
   var count = await CountQuery(dataViewName, systemName, query, sessionDetails);
   if (count == null)
   {
