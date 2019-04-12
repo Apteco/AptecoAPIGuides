@@ -19,11 +19,11 @@ An example of a generated library in C# (including notes on how it was generated
 
 The steps to go through are:
 
-1. Ensure you have Java installed (the time of writing swagger-codegen uses Java 8).
+1. Ensure you have Java installed (at the time of writing swagger-codegen uses Java 8).
 2. Download the latest stable release of the swagger-codegen (see 
 [the prerequisites on the swagger-codegen readme](https://github.com/swagger-api/swagger-codegen#prerequisites)
 for a link to get the jar file from).
-3. Create a json options file to contains the settings to use when generating the API client code.  This will be languge
+3. Create a json options file to contain the settings to use when generating the API client code.  This will be languge
 dependant - see the swagger-codegen documentation for details.  There is an example C# options file in the
 [ApiSystemAnalyser](https://github.com/Apteco/ApiSystemAnalyser) sample application.
 4. Run the following command to generate the client libraries from the API hosted at the given URL:

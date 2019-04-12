@@ -200,7 +200,7 @@ Once we have loaded a query we can count it straight away by passing it to the `
 endpoint.  Indeed, if we wanted to count it without modification then we could use the 
 `{dataViewName}/Queries/{systemName}/CountFileSync` endpoint directly to pass in a file path and get a set of counts.
 
-However a more interesting example would be to modify the query first.  In this example we search for a criteria that uses the
+However a more interesting example would be to modify the query first.  In this example we search for a criteria that uses
 a given variable and replaces the selected values with some new ones.
 
 ``` csharp
