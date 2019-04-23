@@ -279,7 +279,7 @@ private async Task OutputCount(string dataViewName, string systemName, string us
     return;
   }
 
-  //This looks for all variables with the name peTitle and selects categories with the codes 01 and 02.
+  //This looks for all variables with the name peIncome and selects categories with the codes 01 and 02.
   ModifyQuery(query, "peIncome", "01\t02");
   
   var count = await CountQuery(dataViewName, systemName, query, sessionDetails);
