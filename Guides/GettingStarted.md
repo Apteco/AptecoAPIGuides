@@ -7,6 +7,7 @@ This guide will help you through the process of developing such applications.
 ## Contents
 
 * [Setting up and configuring the Apteco API](#setting-up-and-configuring-the-apteco-api)
+  * [How Orbit uses the API](#how-orbit-uses-the-api)
 * [A quick tour](#a-quick-tour)
   * [Swagger UI](#swagger-ui)
   * [DataViews](#dataViews)
@@ -26,6 +27,10 @@ your Apteco partner or Apteco Support.
 
 The Apteco API is typically installed as part of the Apteco Orbit™ platform and the Apteco Orbit™ browser-based UI depends on
 the Apteco API to function.  If you already have Apteco Orbit™ installed then the Apteco API will be available.
+
+### How Orbit uses the API
+The Apteco Orbit™ browser-based UI uses lots of the API's functions and can be a good way of learning how to interact with
+the API.  To understand how the Orbit UI uses the API see [How Orbit Uses The API](HowOrbitUsesTheAPI.md).
 
 ## A quick tour
 
