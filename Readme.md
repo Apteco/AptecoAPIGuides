@@ -28,16 +28,18 @@ The currently available documentation is:
  
 * [Getting Started Guide](Guides/GettingStarted.md): General information on how to start using the Apteco API.
 
- * [Generating an API Client Library](Guides/GeneratingAPIClientLibrary.md): How to automatically generate a client library to connect to the Apteco API.
+* [Generating an API Client Library](Guides/GeneratingAPIClientLibrary.md): How to automatically generate a client library to connect to the Apteco API.
+
+* [How Orbit uses the API](Guides/HowOrbitUsesTheAPI.md): Investigating how the Apteco Orbit™ UI uses the Apteco API.
 
 ### Sample Applications
 
- * [ApiSystemAnalyser](https://github.com/Apteco/ApiSystemAnalyser): A sample console application that demonstrates how to log in and request
+* [ApiSystemAnalyser](https://github.com/Apteco/ApiSystemAnalyser): A sample console application that demonstrates how to log in and request
  some high level metadata about a FastStats® system.  This sample is written in C# using .Net Core.
 
- ![ApiSystemAnalyser](Images/ApiSystemAnalyser.jpg)
+![ApiSystemAnalyser](Images/ApiSystemAnalyser.jpg)
 
- * [OrbitSlackBot](https://github.com/Apteco/OrbitSlackBot): A sample application that demonstrates how to integrate the Apteco API
+* [OrbitSlackBot](https://github.com/Apteco/OrbitSlackBot): A sample application that demonstrates how to integrate the Apteco API
  with the [Slack](https://slack.com/) collaboration and messaging platform.  This sample is written in C# using .Net Framework
 
- ![OrbitSlackBot](Images/OrbitSlackBot.png)
+![OrbitSlackBot](Images/OrbitSlackBot.png)
