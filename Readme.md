@@ -39,6 +39,11 @@ The currently available documentation is:
 
 ![ApiSystemAnalyser](Images/ApiSystemAnalyser.jpg)
 
+* [ApiDataExplorer](https://github.com/Apteco/ApiDataExplorer): A sample console application that demonstrates how to log in and export some data
+from a FastStats® system.  This sample is written in C# using .Net Core.
+
+![ApiSystemAnalyser](Images/ApiDataExplorer.jpg)
+
 * [OrbitSlackBot](https://github.com/Apteco/OrbitSlackBot): A sample application that demonstrates how to integrate the Apteco API
  with the [Slack](https://slack.com/) collaboration and messaging platform.  This sample is written in C# using .Net Framework
 
