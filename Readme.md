@@ -48,3 +48,12 @@ from a FastStats® system.  This sample is written in C# using .Net Core.
  with the [Slack](https://slack.com/) collaboration and messaging platform.  This sample is written in C# using .Net Framework
 
 ![OrbitSlackBot](Images/OrbitSlackBot.png)
+
+* [flight-delay-app](https://github.com/Apteco/flight-delay-app):
+A sample web app that demonstrates how to use `py-apteco`,
+a Python wrapper package for the API.
+The app makes requests to the API for various kinds of data,
+and then uses `plotly` to generate beautiful visualisations to display the results to the user.
+This sample is written in Python using the Django web framework.beautiful visualisations.
+
+![OrbitSlackBot](Images/FlightDelayApp.png)
