@@ -54,6 +54,6 @@ A sample web app that demonstrates how to use `py-apteco`,
 a Python wrapper package for the API.
 The app makes requests to the API for various kinds of data,
 and then uses `plotly` to generate beautiful visualisations to display the results to the user.
-This sample is written in Python using the Django web framework.beautiful visualisations.
+This sample is written in Python using the Django web framework.
 
 ![OrbitSlackBot](Images/FlightDelayApp.png)
