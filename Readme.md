@@ -44,6 +44,11 @@ from a FastStats® system.  This sample is written in C# using .Net Core.
 
 ![ApiSystemAnalyser](Images/ApiDataExplorer.jpg)
 
+* [ApiDataAggregator](https://github.com/Apteco/ApiDataAggregator): a sample application that connects to a Apteco FastStats® system via the Apteco API to demonstrate how some simple system aggregations can be
+created.  This sample is written in C# using .Net Core.
+
+![ApiDataAggregator](Images/ApiDataAggregator.jpg)
+
 * [OrbitSlackBot](https://github.com/Apteco/OrbitSlackBot): A sample application that demonstrates how to integrate the Apteco API
  with the [Slack](https://slack.com/) collaboration and messaging platform.  This sample is written in C# using .Net Framework
 
