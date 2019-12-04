@@ -55,13 +55,19 @@ developing applications against the API:
 
 Lots of the API endpoints refer to DataViews, and in many cases a `dataViewName` parameter will be required.
 
-A DataView is a configuration within the Apteco API and within Orbit.  A DataView name performs a similar role
-to a FastStats system name, except that a single DataView can contain configuration for multiple FastStats
-systems.
+A DataView is a concept within the Apteco API and within Orbit.  A DataView is a grouping of FastStats systems and
+is designed to make it easier for a user of Orbit that isn't as familiar with the Apteco Marketing Suite to log in
+to potentially multiple FastStast systems in one go.  An Orbit DataView can contain collections, campaign results
+and audiences for different FastStats systems and list them side by side.
 
-This is useful when an organisation has multiple FastStats systems, but users who are not deeply familiar with
-the differences of each system can log in to just one view of the data.  For example, a DataView can contain Orbit
-collections for different FastStats systems and list them side by side. 
+For example the fictional travel agent "Teal Green Holidays" might have 2 FastStats systems, one structured to analyse
+bookings and one to analyse customer service interactions.  Note that it is possible to hold all of this information in
+one FastStats system, but some customers might choose to implement multiple systems for various reasons.  The two systems
+might be called TealGreen_B for bookings and TealGreen_S for customer service.
+
+Whilst FastStats users might be familiar with these two systems and names, users that have had Orbit results shared to them
+might find the system names confusing.  Therefore having a single DataView called "TealGreen" makes it easier for them to
+log in and consume any prepared results.
 
 ### Authentication
 
@@ -77,8 +83,8 @@ access endpoints that require authentication using the Swagger UI go through the
 2. Enter the Data View you want to log in to, the "UserLogin" (either the FastStats username or email address
 of the user you want to log in as) and the user's password.  Press the "Execute" button to call the endpoint.
 
-3. The result of the call will be something like the following, with the first part of the returned JSON
-4. containing an accessToken.  This is the [JWT](https://jwt.io/) that is used to authenticate with the API.
+3. The result of the call will be something like the following, with the first part of the returned JSON 
+containing an accessToken.  This is the [JWT](https://jwt.io/) that is used to authenticate with the API.
 
 ![SwaggerUI Sessions/SimpleLogin Results](Images/GettingStarted/SwaggerUI-Sessions-SimpleLogin-Results.png)
 
@@ -115,7 +121,7 @@ accessing the following areas of functionality:
 *	FastStats Queries: Counting saved queries or user-defined query definitions.  NOTE: This is currently
 marked as Experimental.
 
-*	FastStats Exports: Being able to export an user-defined set of fields for records from a user-defined
+*	FastStats Exports: Being able to export a user-defined set of fields for records from a user-defined
 query.  NOTE: This is currently marked as Experimental.
 
 *	FastStats Cubes: Being able to generate aggregations of a user-defined set of dimensions for records
@@ -174,7 +180,7 @@ It returns a SessionDetails object containing (amongst other things) the access 
 future API requests.
 
 The `CreateConfiguration()` method is used to provide configuration details to each call of the API.  If there are
-`SessionDetails` provided, the Authorization header will be set appropriately.  In this example the URL of the API is hardcoded/.
+`SessionDetails` provided, the Authorization header will be set appropriately.  In this example the URL of the API is hardcoded.
 
 ### Loading a saved query definition
 
@@ -256,7 +262,7 @@ the criteria is for the appropriate variable name.
 
 ### Count a query
 
-To count the modified query it can be passed back to the `{dataViewName}/Queries/{systemName}/CountSync` endpoiont.
+To count the modified query it can be passed back to the `{dataViewName}/Queries/{systemName}/CountSync` endpoint.
 
 ``` csharp
 private async Task<Count> CountQuery(string dataViewName, string systemName, Query query, SessionDetails sessionDetails)
