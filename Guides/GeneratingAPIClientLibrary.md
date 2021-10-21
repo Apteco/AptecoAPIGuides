@@ -45,8 +45,8 @@ private async Task LoginAndListAvailableFastStatsSystems()
   string userLogin = "user";
   string password = "letmein";
 
-  var sessionsApi = new SessionsApi(CreateConfiguration(null));
-  var sessionDetails = await sessionsApi.SessionsCreateSessionSimpleAsync(dataViewName, userLogin, password);
+  var loginSessionsApi = new SessionsApi(CreateConfiguration(null));
+  var sessionDetails = await loginSessionsApi.SessionsCreateSessionSimpleAsync(dataViewName, userLogin, password);
 
   var fastStatsSystemsApi = new FastStatsSystemsApi(CreateConfiguration(sessionDetails));
   var pagedSystems = await fastStatsSystemsApi.FastStatsSystemsGetFastStatsSystemsAsync(dataViewName);
@@ -55,7 +55,8 @@ private async Task LoginAndListAvailableFastStatsSystems()
     Console.WriteLine(system.Name);
   }
 
-  await sessionsApi.SessionsLogoutSessionAsync(dataViewName, sessionDetails.SessionId);
+  var logoutSessionsApi = new SessionsApi(CreateConfiguration(sessionDetails));
+  await logoutSessionsApi.SessionsLogoutSessionAsync(dataViewName, sessionDetails.SessionId);
 }
 
 private Configuration CreateConfiguration(SessionDetails sessionDetails)
